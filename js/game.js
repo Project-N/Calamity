@@ -8,5 +8,8 @@ Game.removeObject = function(object){
 
 }
 Game.update = function(){
-	requestAnimationFrame( update );
+	console.log("hi");
+	if(Main.paused != true){
+	requestAnimationFrame(Game.update);
+	}
 }
