@@ -31,6 +31,7 @@ Main.pause = function(){
 }
 //play() - Resumes the game.
 Main.play = function(){
+	requestAnimationFrame(Game.update);
 	this.music.play();
 	this.paused = false;
 }
