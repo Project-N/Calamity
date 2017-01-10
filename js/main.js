@@ -1,6 +1,7 @@
 var Main = {};
 Main.music = new Audio();
-Main.loadLevel = function(level){
+Main.paused = true;
+Main.loadLevel = function(level,callback){
 
 }
 //exit() - Exits the game.
@@ -13,9 +14,11 @@ Main.switchLevel = function(level){
 }
 //switchMusic(sound) - Switches the music to sound.
 Main.switchMusic = function(sound){
-	this.music.pause();
+	this.music.pause();//Stops the current music.
 	this.music = sound;
-	this.music.play();
+	if(this.paused != true){//Checks if the game is paused, and if it's not, it starts the music.
+		this.music.play();
+	}
 }
 //playSound(sound) - Plays sound.
 Main.playSound = function(sound){
@@ -23,12 +26,14 @@ Main.playSound = function(sound){
 }
 //pause() - Pauses the game.
 Main.pause = function(){
-
+	this.music.pause();
+	this.paused = true;
 }
 //play() - Resumes the game.
 Main.play = function(){
-
+	this.music.play();
+	this.paused = false;
 }
 document.addEventListener("DOMContentLoaded",function(event){
-
+	Main.switchMusic(new Audio("media/bensound-slowmotion.ogg"));
 });
