@@ -1,6 +1,11 @@
 var maxId = 0;
+//FOR EVERY THREE.JS OBJECT, THE FOLLOWING MUST BE ADDED.
+//type - Type of the object. Projectile, Ship, Immovable, None
+//static - Whether or not the object stays in place.
 
-function Thing() {
+
+
+/*function Thing() {
   this.id = maxId++;
   this.velocity = new THREE.Vector3( 0, 0, 0 );
   this.position = new THREE.Vector3( 0, 0, 0 );
@@ -31,4 +36,4 @@ function Box() {
 }
 
 Box.prototype = Object.create(Thing.prototype);
-Box.prototype.constructor = Box;
+Box.prototype.constructor = Box;*/
