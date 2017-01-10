@@ -1,7 +1,8 @@
 var Main = {};
 Main.music = new Audio();
 Main.paused = true;
-Main.loadLevel = function(level,callback){
+Main.level = new Level();
+Main.loadLevel = function(){
 
 }
 //exit() - Exits the game.
@@ -10,7 +11,11 @@ Main.exit = function(){
 }
 //switchLevel(Level) - Switches to level.
 Main.switchLevel = function(level){
-
+	this.level.unload();
+	resetGame();
+	this.level = level;
+	this.level.load();
+	this.loadLevel();
 }
 //switchMusic(sound) - Switches the music to sound.
 Main.switchMusic = function(sound){

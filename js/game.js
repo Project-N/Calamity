@@ -3,12 +3,14 @@ var Game = {};
 Game.scene = new THREE.Scene();
 Game.scenecontainer = new THREE.Object3D();
 Game.scene.add(scenecontainer);
+Game.objects = [];
 Game.clock = new THREE.Clock();
 Game.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 100000);
 Game.renderer = new THREE.WebGLRenderer({antialias:true});
 Game.renderer.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(Game.renderer.domElement);
 Game.addObject = function(object){
+	Game.objects.push(object);
 	if(object.static == true){
 		Game.scene.add(object);
 	}
@@ -17,7 +19,13 @@ Game.addObject = function(object){
 	}
 }
 Game.removeObject = function(object){
-	
+	Game.objects.remove(object);
+	if(object.static == true){
+		Game.scene.remove(object);
+	}
+	else{
+		Game.scenecontainer.remove(object);
+	}
 }
 Game.update = function(){
 	Game.renderer.render(Game.scene,Game.camera);

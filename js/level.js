@@ -1,6 +1,7 @@
 function Level(name){
 	this.name = name;
-	this.setup = function(game){
-		
-	};
+	this.objects = [];
+	this.objectives = [];
+	this.load = function(){};
+	this.unload = function(){};
 }
