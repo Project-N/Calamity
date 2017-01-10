@@ -28,3 +28,5 @@ function Box() {
 //Current implementation doesn't work.
 //Suggest looking at:
 //https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance
+//Make sure to put all variable declarations in the constructor, and all function declarations in the prototype.
+//Make sure to use call() correctly. Also, make sure to copy over the prototype and replace the constructor accordingly.
