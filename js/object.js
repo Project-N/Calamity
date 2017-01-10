@@ -25,3 +25,6 @@ function Projectile(velocity) {
 function Box() {
     object.create(Thing);
 }
+//Current implementation doesn't work.
+//Suggest looking at:
+//https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance
