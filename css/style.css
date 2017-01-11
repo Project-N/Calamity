@@ -1,4 +1,47 @@
-body,html{
-	margin:0px;
-	overflow:hidden;
+body { margin: 0; overflow:hidden; }
+canvas { width: 100%; height: 100% }
+html, html *{
+	-webkit-user-select: none;
+	-moz-user-select:none;
+	cursor:url("../media/cursor.png"),default;
+}
+@font-face{
+	font-family:'Perfect Dark';
+	src: url('../media/pdark.ttf');
+}
+.menu{
+	position:absolute;
+	top:10%;
+	width:100%;
+	color:#ffffff;
+	text-align:center;
+	z-index:100;
+	font-size:100px;
+	font-family:'Perfect Dark';
+}
+.menu a{
+	color:#29b6f6;
+	text-decoration:none;
+}
+.menu a:hover{
+	color:#39C6FF;
+}
+img.reticle {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 64px;
+   height: 64px;
+   margin-top: -32px; /* Half the height */
+   margin-left: -32px; /* Half the width */
+}
+div.fade{
+    pointer-events: none;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#000000;
+    z-index:200;
 }

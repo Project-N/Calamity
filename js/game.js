@@ -1,8 +1,12 @@
+var Game = null;
 function resetGame(){
-var Game = {};
+if(Game != null){
+document.body.removeChild(Game.renderer.domElement);
+}
+Game = {};
 Game.scene = new THREE.Scene();
 Game.scenecontainer = new THREE.Object3D();
-Game.scene.add(scenecontainer);
+Game.scene.add(Game.scenecontainer);
 Game.objects = [];
 Game.clock = new THREE.Clock();
 Game.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 100000);
@@ -28,9 +32,15 @@ Game.removeObject = function(object){
 	}
 }
 Game.update = function(){
+	for(var i = 0; i < Game.objects.length; i++){
+		if(Game.objects[i].update != undefined){
+			Game.objects[i].update(Game.clock.getDelta());
+		}
+	}
 	Game.renderer.render(Game.scene,Game.camera);
 	if(Main.paused != true){
 	requestAnimationFrame(Game.update);
 	}
+
 }
 };

@@ -1,4 +1,5 @@
 function skybox(scalar){
+	var starcontainer = new THREE.Object3D();
 	var i, r = scalar*10, starsGeometry = [ new THREE.Geometry(), new THREE.Geometry() ];
 				for ( i = 0; i < 250; i ++ ) {
 					var vertex = new THREE.Vector3();
@@ -34,7 +35,8 @@ function skybox(scalar){
 					stars.scale.set( s, s, s );
 					stars.matrixAutoUpdate = false;
 					stars.updateMatrix();
-                    stars.static = true;
+                    starcontainer.add(stars);
 				}
-    return stars;
+	starcontainer.static = true;
+    return starcontainer;
 }

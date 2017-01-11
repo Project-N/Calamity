@@ -3,11 +3,15 @@ Main.music = new Audio();
 Main.paused = true;
 Main.level = new Level();
 Main.loadLevel = function(){
-
+	for(var i = 0; i < this.level.objects.length; i++){
+		Game.addObject(this.level.objects[i]);
+	}
 }
 //exit() - Exits the game.
 Main.exit = function(){
-
+	var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", "http://localhost:8000", true); // false for synchronous request
+    xmlHttp.send(null);
 }
 //switchLevel(Level) - Switches to level.
 Main.switchLevel = function(level){
@@ -41,5 +45,6 @@ Main.play = function(){
 	this.paused = false;
 }
 document.addEventListener("DOMContentLoaded",function(event){
-	Main.switchMusic(new Audio("media/bensound-slowmotion.ogg"));
+	Main.switchLevel(mainmenu);
+	Main.play();
 });
