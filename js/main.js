@@ -1,5 +1,6 @@
 var Main = {};
 Main.music = new Audio();
+Main.vox = new Audio();
 Main.paused = true;
 Main.level = new Level();
 Main.loadLevel = function(){
@@ -15,6 +16,8 @@ Main.exit = function(){
 }
 //switchLevel(Level) - Switches to level.
 Main.switchLevel = function(level){
+	this.music.pause();
+	this.vox.pause();
 	this.level.unload();
 	resetGame();
 	this.level = level;
@@ -29,6 +32,13 @@ Main.switchMusic = function(sound){
 		this.music.play();
 	}
 }
+Main.playVox = function(sound){
+	this.vox.pause();
+	this.vox = sound;
+	if(this.paused != true){
+		this.vox.play();
+	}
+}
 //playSound(sound) - Plays sound.
 Main.playSound = function(sound){
 	sound.play();
@@ -36,6 +46,8 @@ Main.playSound = function(sound){
 //pause() - Pauses the game.
 Main.pause = function(){
 	this.music.pause();
+	this.vox.pause();
+	document.getElementById("pausemenu").style.display = "block";
 	this.paused = true;
 	Game.clock.stop();
 }
@@ -43,10 +55,21 @@ Main.pause = function(){
 Main.play = function(){
 	requestAnimationFrame(Game.update);
 	this.music.play();
+	if(!this.vox.ended){
+		this.vox.play();
+	}
+	document.getElementById("pausemenu").style.display = "none";
 	this.paused = false;
 	Game.clock.start();
 }
 document.addEventListener("DOMContentLoaded",function(event){
+	pausemenu = document.createElement("div");
+    pausemenu.className = "menu";
+    pausemenu.id = "pausemenu";
+    pausemenu.innerHTML = "Paused<br /><br /><a onclick='pointerlock();'>Play</a><br /><a onclick='Main.switchLevel(mainmenu);Main.play();'>Exit</a>"
+    document.body.appendChild(pausemenu);
+    document.getElementById("pausemenu").style.display = "none";
+    document.body.appendChild(Game.renderer.domElement);
 	Main.switchLevel(mainmenu);
 	Main.play();
 });
