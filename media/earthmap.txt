@@ -1,0 +1,7 @@
+earthmap2.txt
+
+Non-copyrighted works used, which were produced by NASA.
+https://www.nasa.gov/multimedia/guidelines/index.html
+
+Files affected:
+earthmap2.jpg
