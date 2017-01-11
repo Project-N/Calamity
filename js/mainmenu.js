@@ -26,7 +26,7 @@ mainmenu.load = function(){
     this.credits = document.createElement("div");
     this.credits.className = "menu";
     this.credits.style.display = "none";
-    this.credits.innerHTML = "Credits<br /><div style='font-size:12px'>All works are original except those listed below.<br /><br />Using music from Bensound, licensed under the Creative Commons Attribution license. Using fonts created by Severin Meyer, licensed under the SIL Open Font License.</div><a onclick='mainmenu.hidecredits()'>Back</a>"; //TODO: Request pointer lock when PLAY button is clicked. Add JS helper file for pointer locks. https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API
+    this.credits.innerHTML = "Credits<br /><div style='font-size:12px'>All works are original except those listed below.<br /><br />Using music from Bensound, licensed under the Creative Commons Attribution license. Using fonts created by Severin Meyer, licensed under the SIL Open Font License.<br />Using modified code from https://github.com/jeromeetienne/threex.geometricglow/, distributed under the MIT license. Using un-copyrighted Earth map produced by NASA.</div><a onclick='mainmenu.hidecredits()'>Back</a>"; //TODO: Request pointer lock when PLAY button is clicked. Add JS helper file for pointer locks. https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API
     document.body.appendChild(this.credits);
 }
 mainmenu.unload = function(){
