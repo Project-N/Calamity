@@ -9,9 +9,9 @@ Game.scenecontainer = new THREE.Object3D();
 Game.scene.add(Game.scenecontainer);
 Game.objects = [];
 Game.clock = new THREE.Clock();
-Game.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 100000);
+Game.camera = new THREE.PerspectiveCamera(75, screen.width/screen.height, 0.1, 100000);
 Game.renderer = new THREE.WebGLRenderer({antialias:true});
-Game.renderer.setSize(window.innerWidth,window.innerHeight);
+Game.renderer.setSize(screen.width,screen.height);
 document.body.appendChild(Game.renderer.domElement);
 Game.addObject = function(object){
 	Game.objects.push(object);
