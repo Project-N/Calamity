@@ -37,12 +37,14 @@ Main.playSound = function(sound){
 Main.pause = function(){
 	this.music.pause();
 	this.paused = true;
+	Game.clock.stop();
 }
 //play() - Resumes the game.
 Main.play = function(){
 	requestAnimationFrame(Game.update);
 	this.music.play();
 	this.paused = false;
+	Game.clock.start();
 }
 document.addEventListener("DOMContentLoaded",function(event){
 	Main.switchLevel(mainmenu);

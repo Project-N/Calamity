@@ -32,6 +32,7 @@ Game.removeObject = function(object){
 	}
 }
 Game.update = function(){
+	Main.level.update();
 	for(var i = 0; i < Game.objects.length; i++){
 		if(Game.objects[i].update != undefined){
 			Game.objects[i].update(Game.clock.getDelta());

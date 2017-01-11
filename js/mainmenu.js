@@ -4,10 +4,12 @@ stars.update = function(delta){
 	this.rotation.x += 0.05 * delta;
     this.rotation.y += 0.01 * delta;
 }
-stars.static = false;
 mainmenu.objects.push(stars);
+mainmenu.objectives.push(new Objective());
 mainmenu.load = function(){
-	Main.switchMusic(new Audio("media/bensound-slowmotion.ogg"));
+	var music = new Audio("media/bensound-slowmotion.ogg");
+	music.loop = true;
+	Main.switchMusic(music);
 	this.title = document.createElement("div");
     this.title.className = "menu";
     this.title.id = "mainmenutitle";
