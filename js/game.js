@@ -5,7 +5,10 @@ function resetGame(){
 	Game.scene.add(Game.scenecontainer);
 	Game.objects = [];
 }
-
+Game.scene = new THREE.Scene();
+Game.scenecontainer = new THREE.Object3D();
+Game.scene.add(Game.scenecontainer);
+Game.objects = [];
 Game.clock = new THREE.Clock();
 Game.camera = new THREE.PerspectiveCamera(60, screen.width/screen.height, 0.1, 100000);
 Game.renderer = new THREE.WebGLRenderer({antialias:true});
