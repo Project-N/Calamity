@@ -63,10 +63,6 @@ Main.play = function(){
 	Game.clock.start();
 }
 document.addEventListener("DOMContentLoaded",function(event){
-	Main.fade = document.createElement('div');
-	Main.fade.className = "fade";
-	Main.fade.style.opacity = 1;
-	document.body.appendChild(Main.fade);
 	Main.pausemenu = document.createElement("div");
     Main.pausemenu.className = "menu";
     Main.pausemenu.innerHTML = "Paused<br /><br /><a onclick='pointerlock();'>Play</a><br /><a onclick='Main.switchLevel(mainmenu);Main.play();'>Exit</a>"
