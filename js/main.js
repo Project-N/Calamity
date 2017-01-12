@@ -47,7 +47,7 @@ Main.playSound = function(sound){
 Main.pause = function(){
 	this.music.pause();
 	this.vox.pause();
-	document.getElementById("pausemenu").style.display = "block";
+	this.pausemenu.style.display = "block";
 	this.paused = true;
 	Game.clock.stop();
 }
@@ -58,18 +58,20 @@ Main.play = function(){
 	if(!this.vox.ended){
 		this.vox.play();
 	}
-	document.getElementById("pausemenu").style.display = "none";
+	this.pausemenu.style.display = "none";
 	this.paused = false;
 	Game.clock.start();
 }
 document.addEventListener("DOMContentLoaded",function(event){
-	pausemenu = document.createElement("div");
-    pausemenu.className = "menu";
-    pausemenu.id = "pausemenu";
-    pausemenu.innerHTML = "Paused<br /><br /><a onclick='pointerlock();'>Play</a><br /><a onclick='Main.switchLevel(mainmenu);Main.play();'>Exit</a>"
-    document.body.appendChild(pausemenu);
-    document.getElementById("pausemenu").style.display = "none";
-    document.body.appendChild(Game.renderer.domElement);
+	Main.fade = document.createElement('div');
+	Main.fade.className = "fade";
+	Main.fade.style.opacity = 1;
+	document.body.appendChild(Main.fade);
+	Main.pausemenu = document.createElement("div");
+    Main.pausemenu.className = "menu";
+    Main.pausemenu.innerHTML = "Paused<br /><br /><a onclick='pointerlock();'>Play</a><br /><a onclick='Main.switchLevel(mainmenu);Main.play();'>Exit</a>"
+    document.body.appendChild(Main.pausemenu);
+    Main.pausemenu.style.display = "none";
 	Main.switchLevel(mainmenu);
 	Main.play();
 });

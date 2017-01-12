@@ -41,3 +41,6 @@ Game.update = function(){
 	}
 
 }
+document.addEventListener("DOMContentLoaded",function(event){
+	document.body.appendChild(Game.renderer.domElement);
+});
