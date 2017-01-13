@@ -5,10 +5,10 @@ var maxId = 0;
 //FOR ALL SHIPS:
 function setupShip(object){
   object.velocity = new THREE.Vector3(0,0,0);
-  object.throttle = 0;
-  object.throttleUp = 0;
-  object.throttleDown = 0;
-  object.retroThruster = 0;
+  object.throttle = 0; 
+  object.throttleUp = 0; //Affected by Controls
+  object.throttleDown = 0; //Affected by Controls
+  object.retroThruster = 0; 
   object.mainThruster = 0;
   object.leftThruster = 0;
   object.rightThruster = 0;
@@ -20,8 +20,10 @@ function setupShip(object){
   object.rightThrusterOn = -1;
   object.topThrusterOn = -1;
   object.bottomThrusterOn = -1;
-  object.rollLeft = 0;
-  object.rollRight = 0;
+  object.rollLeft = 0; //Affected by Controls
+  object.rollRight = 0; //Affected by Controls
+  object.movementX = 0; //Affected by Controls
+  object.movementY = 0; //Affected by Controls
 }
 
 
