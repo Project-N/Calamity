@@ -5,6 +5,8 @@ var earth = planet(6000,128,"media/earthmap.jpg",false);
 earth.position.x = 10000;
 earth.position.z = -10000;
 earth.static = true;
+earth.moving = true;
+earth.velocity = new THREE.Vector3(0,100,0);
 levelone.objects.push(earth);
 levelone.objectives.push(new Objective());
 levelone.load = function(){

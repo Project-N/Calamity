@@ -1,10 +1,12 @@
 var maxId = 0;
 //FOR EVERY THREE.JS OBJECT, THE FOLLOWING MUST BE ADDED.
 //type - Type of the object. Projectile, Ship, Immovable, None
-//static - Whether or not the object stays in place.
+//static - Whether or not the object is outside the scene container.
+//moving - Whether or not the object has a velocity attribute that needs to be added to the position each frame.
 //FOR ALL SHIPS:
 function setupShip(object){
   object.velocity = new THREE.Vector3(0,0,0);
+  object.moving = true;
   object.throttle = 0; 
   object.throttleUp = 0; //Affected by Controls
   object.throttleDown = 0; //Affected by Controls
