@@ -24,8 +24,18 @@ function setupShip(object){
   object.rollRight = 0; //Affected by Controls
   object.movementX = 0; //Affected by Controls
   object.movementY = 0; //Affected by Controls
+  object.rollSpeed = 0;
+  object.turnSpeed = 0;
+  object.mainSpeed = 0;
+  object.thrustSpeed = 0;
+  object.mainChangeSpeed = 0;
+  object.thrustChangeSpeed = 0;
+  object.straightenSpeed = 0;
+  object.throttleChangeSpeed = 0;
 }
+function HIDControls(){
 
+}
 
 /*function Thing() {
   this.id = maxId++;
