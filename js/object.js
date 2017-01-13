@@ -2,7 +2,27 @@ var maxId = 0;
 //FOR EVERY THREE.JS OBJECT, THE FOLLOWING MUST BE ADDED.
 //type - Type of the object. Projectile, Ship, Immovable, None
 //static - Whether or not the object stays in place.
-
+//FOR ALL SHIPS:
+function setupShip(object){
+  object.velocity = new THREE.Vector3(0,0,0);
+  object.throttle = 0;
+  object.throttleUp = 0;
+  object.throttleDown = 0;
+  object.retroThruster = 0;
+  object.mainThruster = 0;
+  object.leftThruster = 0;
+  object.rightThruster = 0;
+  object.topThruster = 0;
+  object.bottomThruster = 0;
+  object.retroThrusterOn = -1;
+  object.mainThrusterOn = -1;
+  object.leftThrusterOn = -1;
+  object.rightThrusterOn = -1;
+  object.topThrusterOn = -1;
+  object.bottomThrusterOn = -1;
+  object.rollLeft = 0;
+  object.rollRight = 0;
+}
 
 
 /*function Thing() {
