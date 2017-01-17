@@ -4,7 +4,9 @@ levelone.load = function(){
 	levelone.objects.length = 0; //Reuses old memory, is better for performance than objects = []
 	//var stars = skybox(30);
 	//levelone.objects.push(stars);
-	var explosion1 = explosion(10000,0xFFFFFF,10,0);
+	var explosion1 = explosion(10000,0xFF0000,1,1.1);
+	explosion1.position.z = -100;
+	explosion1.position.x = 10;
 	levelone.objects.push(explosion1);
 	var earth = planet(6000,128,"media/earthmap.jpg",false);
 	earth.position.x = 10000;
