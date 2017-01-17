@@ -3,8 +3,10 @@ function explosion(count,color,size,speed){
 	var pmaterial = new THREE.PointsMaterial({size:size,color:color});
 	for(var j = 0; j < count; j++){
 		var pX = Math.random()*2-1,pY = Math.random()*2-1,pZ = Math.random()*2-1;
+		if( pX*pX + pY*pY + pZ*pZ < 1){
 		var particle = new THREE.Vector3(pX,pY,pZ);
 		particles.vertices.push(particle);
+		}
 	}
 	var particleSystem = new THREE.Points(particles,pmaterial);
 	particleSystem.static = true;
